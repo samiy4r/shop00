@@ -9,6 +9,7 @@ class Product(models.Model):
     is_active = models.BooleanField()
     is_delete = models.BooleanField(default= False)
     short_description =models.TextField(max_length=260)
+    description = models.TextField(help_text="descibe the product here")
 
 
     def __str__(self):
