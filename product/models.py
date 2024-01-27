@@ -17,7 +17,7 @@ class Product(models.Model):
     is_active = models.BooleanField()
     is_delete = models.BooleanField(default= False)
     short_description =models.CharField(max_length=260)
-    description = models.TextField(help_text="descibe the product here")
+    description = models.TextField(help_text="describe the product here")
 
 
     def __str__(self):
