@@ -6,6 +6,6 @@ class Product(models.Model):
     price = models.IntegerField()
     slug = models.SlugField()
     category = models.ManyToManyField()
-
+    is_active = models.BooleanField()
     def __str__(self):
         return self.title
