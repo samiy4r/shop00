@@ -7,5 +7,8 @@ class Product(models.Model):
     slug = models.SlugField()
     category = models.ManyToManyField()
     is_active = models.BooleanField()
+    is_delete = models.BooleanField(default= False)
+    
+
     def __str__(self):
         return self.title
