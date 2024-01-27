@@ -8,7 +8,8 @@ class Product(models.Model):
     category = models.ManyToManyField()
     is_active = models.BooleanField()
     is_delete = models.BooleanField(default= False)
-    
+    short_description =models.TextField(max_length=260)
+
 
     def __str__(self):
         return self.title
