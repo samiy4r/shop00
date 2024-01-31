@@ -1,0 +1,112 @@
+{% extends 'shared/layout.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/fonts/contact/fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/contact/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="static/css/contact/css/style.css">
+
+    <title>Contact Form #9</title>
+  </head>
+  <body class="border border-1 --bs-body-color">
+  
+
+  <div class="content">
+    
+    <div class="container border border-2 rounded shadow  p-5">
+      <div class="row align-items-stretch no-gutters contact-wrap pt-2 ">
+        <div class="col-md-12">
+          <div class="form h-100">
+
+
+            <div class="row">
+                <div class="col-md-3  col align-self-center">            <h3 class="text-center ">تماس با ما</h3></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3 text-center ">                       
+                    
+                        <img src="/static/img/category/repair-tools.png" alt="" style="max-width: 80px;
+                        height: auto;">
+                    
+                </div> 
+            </div>
+            <br>
+            <form class="mb-5" method="post" id="contactForm" name="contactForm" action>
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-3 form-group mb-3">
+                  <label for="" class="col-form-label"><strong>نام کامل</strong></label>
+                  <input type="text" class="form-control" name="full_name" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید">
+                </div>
+                <div class="col-md-3 form-group mb-3">
+                  <label for="" class="col-form-label"><strong>ایمیل</strong></label>
+                  <input type="email" class="form-control" name="email" id="email"  placeholder="پست الکترونیکی خود را وارد کنید">
+                </div>
+                <div class="col-md-3 form-group mb-3">
+                    <label for="" class="col-form-label"><strong>شماره تماس</strong></label>
+                    <input type="text" class="form-control" name="phone" id="phone"  placeholder="شماره مبایل خود را وارد کنید">
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="" class="col-form-label"><strong>موضوع</strong></label>
+                  <input type="text" class="form-control" name="subject" id="Subject"  placeholder="موضوع خود را وارد کنید">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="message" class="col-form-label"><strong>پیام</strong></label>
+                  <textarea class="form-control" name="message" id="message" cols="30" rows="4"  placeholder="پیام یا نظرتان را وارد کنید"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <input type="submit" value="ثبت و ارسال" class="btn btn-danger  rounded-5 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+
+    <script src="static/js/contact/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/contact/js/popper.min.js"></script>
+    <script src="static/js/contact/js/bootstrap.min.js"></script>
+    <script src="static/js/contact/js/jquery.validate.min.js"></script>
+    <script src="static/js/contact/js/main.js"></script>
+
+  </body>
+</html>
+
+{% endblock %}
