@@ -13,27 +13,27 @@ class ContactForm(forms.Form):
         label='پیام',
         widget=forms.Textarea(attrs={
             'class': 'form-control',
-            'placeholder': 'نام و نام خانوادگی'
+            'placeholder': 'پیام'
         }))
     subject = forms.CharField(
         label='موضوع',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'نام و نام خانوادگی'
+            'placeholder': 'موضوع'
         })
     )
     phone = forms.IntegerField(
         label='شماره تماس',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'نام و نام خانوادگی'
+            'placeholder': 'شماره تماس'
         })
     )
     email = forms.EmailField(
         label='ایمیل',
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'نام و نام خانوادگی'
+            'placeholder': 'ایمیل'
         })
     )
 
