@@ -54,34 +54,32 @@
                 </div> 
             </div>
             <br>
-            <form class="mb-5" method="post" id="contactForm" name="contactForm" action>
+            <form class="mb-5" method="post" id="contactForm" name="contactForm" action="{% url 'lightshop:contact' %}">
               {% csrf_token %}
               <div class="row">
                 <div class="col-md-3 form-group mb-3">
-                  <label for="" class="col-form-label"><strong>نام کامل</strong></label>
-                  <input type="text" class="form-control" name="full_name" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید">
+                  <label for="" class="col-form-label"><strong>{{ form.full_name.label}}</strong></label>
+                  {{ form.full_name }}
                 </div>
                 <div class="col-md-3 form-group mb-3">
-                  <label for="" class="col-form-label"><strong>ایمیل</strong></label>
-                  <input type="email" class="form-control" name="email" id="email"  placeholder="پست الکترونیکی خود را وارد کنید">
+                  <label for="" class="col-form-label"><strong>{{ form.email.label}}</strong></label>
+                  {{ form.email }}
                 </div>
                 <div class="col-md-3 form-group mb-3">
-                    <label for="" class="col-form-label"><strong>شماره تماس</strong></label>
-                    <input type="text" class="form-control" name="phone" id="phone"  placeholder="شماره مبایل خود را وارد کنید">
-                  </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 form-group mb-3">
-                  <label for="" class="col-form-label"><strong>موضوع</strong></label>
-                  <input type="text" class="form-control" name="subject" id="Subject"  placeholder="موضوع خود را وارد کنید">
+                  <label for="" class="col-form-label"><strong>{{ form.phone.label}}</strong></label>
+                  {{ form.phone }}
                 </div>
               </div>
-
               <div class="row">
-                <div class="col-md-12 form-group mb-3">
-                  <label for="message" class="col-form-label"><strong>پیام</strong></label>
-                  <textarea class="form-control" name="message" id="message" cols="30" rows="4"  placeholder="پیام یا نظرتان را وارد کنید"></textarea>
+                <div class="col form-group mb-3">
+                  <label for="" class="col-form-label"><strong>{{ form.subject.label}}</strong></label>
+                  {{ form.subject }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col form-group mb-3">
+                  <label for="" class="col-form-label"><strong>{{ form.message.label}}</strong></label>
+                  {{ form.message }}
                 </div>
               </div>
               <div class="row">
