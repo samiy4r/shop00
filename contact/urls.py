@@ -3,5 +3,6 @@ from . import views
 
 app_name='lightshop'
 urlpatterns = [
-    path('', views.contact, name='contact')
+    path('', views.contact, name='contact'),
+    path('', views.add, name='add'),
 ]
