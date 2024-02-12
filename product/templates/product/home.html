@@ -1,17 +1,17 @@
 {% extends 'shared/layout.html' %}
     {% block content %}     
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5 ">
             <div class="container px-4 px-lg-5 mt-5">
                
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"  style="padding-top: 125px;">
                     {% for product in products %}
-                        <div class="col mb-5">
-                            <div class="card h-100">
+                        <div class="col col-md-3 mb-5 rounded-3">
+                            <div class="card h-100 border shadow-sm">
                                 <!-- Sale badge-->
-                                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">ارسال رایگان</div>
                                 <!-- Product image-->
-                                <img class="card-img-top" src="" alt="..." />
+                                <img class="card-img-top mt-2" src="/static/img/cart/04.jpg" alt="..." />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -38,7 +38,7 @@
                                 </div>
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent ">
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="">Add Product</a></div>
+                                    <div class="text-center"><a class="btn btn-danger mt-auto" href="">Add Product</a></div>
                                 </div>
                             </div>
                         </div>
@@ -47,6 +47,21 @@
                 </div>
                 
             </div>
+
         </section>
         <!-- Footer-->
+        <div class="row">
+            <div class="col-12">
+                <div class="pagination">
+                    <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+                    <a href="#">1</a>
+                    <a href="#" class="active-page">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">...</a>
+                    <a href="#">7</a>
+                    <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+                </div>
+            </div>
+        </div>
             {% endblock %}
