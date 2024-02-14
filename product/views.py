@@ -4,6 +4,7 @@ from .models import Product
 # Create your views here.
 def product_detail(request, slug):
     data = Product.objects.get(slug=slug)
+
     return render(request, 'product/product_detail.html',{'product':data})
 
 def home(request):
