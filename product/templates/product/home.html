@@ -5,13 +5,13 @@
             <div class="container px-4 px-lg-5 mt-5">
                
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"  style="padding-top: 125px;">
-                    {% for product in products %}
+                    {% for product in page_obj %}
                         <div class="col col-md-3 mb-5 rounded-3">
                             <div class="card h-100 border shadow-sm">
                                 <!-- Sale badge-->
                                 <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">ارسال رایگان</div>
                                 <!-- Product image-->
-                                <img class="card-img-top mt-2" src="/static/img/cart/04.jpg" alt="..." />
+                                <img class="card-img-top mt-2" src="{{product.picture.url}}" alt="..." />
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
@@ -19,15 +19,6 @@
                                         <h5 class="fw-bolder">{{product.title}}</h5>
                                         <!-- Product reviews-->
                                         <div class="d-flex justify-content-center small text-warning mb-2">
-                                        
-                                        
-                                        
-                                        
-                                    
-                                            
-
-                                                
-
                                         </div>
                                         <!-- Product price-->
                                         <span class="text-muted text-decoration-line-through">${{product.price}}</span>
@@ -43,7 +34,6 @@
                             </div>
                         </div>
                     {% endfor %}
-                    
                 </div>
                 
             </div>
@@ -53,14 +43,17 @@
         <div class="row">
             <div class="col-12">
                 <div class="pagination">
-                    <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
-                    <a href="#">1</a>
-                    <a href="#" class="active-page">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">...</a>
-                    <a href="#">7</a>
-                    <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+                    {% if page_obj.has_previous %}
+                        <a href="/product/?page={{ page_obj.previous_page_number}}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+                    {% endif %}
+                    
+                    {% for page in paginator.page_range %}
+                        <a {% if page == page_obj.number  %}class="active-page"{% endif %} href="/product/?page={{page}}">{{page}}</a>
+                    {% endfor%}
+                    
+                    {% if page_obj.has_next %}
+                        <a href="/product/?page={{ page_obj.next_page_number}}" class=""><i class="mdi mdi-chevron-double-left"></i></a>
+                    {% endif %}
                 </div>
             </div>
         </div>
