@@ -23,27 +23,18 @@ Go to the project directory
   cd /lightshop
 ```
 
-Install virtualenv
-
-```bash
- install and Activate Venv
-
-  Venv documents : https://virtualenv.pypa.io/
-```
+activate your virtualenv
 
 Database
-
 ```bash
 py manage.py makemigrations
 
 py manage.py migrate
-  
 ```
 Start the server
 
 ```bash
 py manage.py runserver
-  
 ```
 
 
@@ -62,9 +53,6 @@ py manage.py runserver
 
 
 ## More
-
-
-###
 
 
 ###
