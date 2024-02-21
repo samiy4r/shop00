@@ -29,6 +29,15 @@
 <body>
     <div class="wrapper">
         <!-- Start main-content -->
+        {% if message %}
+            <h3>{{message}}</h3>
+        {% endif %}
+
+        <form action="{% url 'account:login' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit">
+        </form>
         <main class="main-content dt-sl mt-4 mb-3">
             <div class="container main-container">
                 <div class="row">
