@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.http import HttpResponse
-from .forms import RegisterForm
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import RegisterForm, LoginForm
 from .models import User
 from django.utils.crypto import get_random_string
+from django.contrib.auth import login, logout
 # Create your views here.
 
 def register(request):
@@ -30,14 +31,32 @@ def register(request):
     return render(request, 'register.html', {"form": RegisterForm})
 
 
-def login(request):
-    
-    return render(request, 'login.html')
+def login_page(request):
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user_email = request.POST.get('email')
+            user = User.objects.filter(email__iexact=user_email).first()
+            if user is not None:
+                if user.is_active:
+                    user_password = request.POST.get('password')
+                    is_password_correct = user.check_password(user_password)
+                    if is_password_correct:
+                        print(request.POST)
+                        login(request, user)
+                        return HttpResponseRedirect(reverse('shop:index'))
+        else:
+            return render(request, 'login.html', {'form': form})
+
+    return render(request, 'login.html', {'form': LoginForm})
 
 
 def activateAccount(request, activate_code):
-    user = User.objects.filter(email_active_code__iexact=activate_code)
-    user.email_active_code = get_random_string(80)
-    user.is_active = True
-    # TODO: show message in login that your account is activated
-    return redirect(reverse('account:login'))
+    user = User.objects.filter(email_active_code__iexact=activate_code).first()
+    if user is not None:
+        user.email_active_code = get_random_string(80)
+        user.is_active = True
+        user.save()
+        return render(request, 'login.html', {'message':'اکانت شما فعال شد'})
+    else:
+        return render(request, 'login.html', {'message':'اکانت شما پیدا نشد'})
