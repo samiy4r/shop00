@@ -36,16 +36,16 @@ class RegisterForm(forms.Form):
 
 class LoginForm(forms.Form):
     email = forms.EmailField(
-        label='ایمیل',
+        label="ایمیل خود را وارد کنید",
         widget=forms.EmailInput(attrs={
             'class':'input-ui pr-2',
-            "placeholder" : "ایمیل خود را وارد کنید"
+            
         })
     )
     password = forms.CharField(
-        label= "رمز عبور",
+        label= "رمز عبور خود را وارد کنید",
         widget=forms.PasswordInput(attrs={
             'class': 'input-ui pr-2',
-            "placeholder" : "رمز عبور خود را وارد کنید"
+        
         })
     )

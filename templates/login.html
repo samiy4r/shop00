@@ -33,11 +33,6 @@
             <h3>{{message}}</h3>
         {% endif %}
 
-        <form action="{% url 'account:login' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit">
-        </form>
         <main class="main-content dt-sl mt-4 mb-3">
             <div class="container main-container">
                 <div class="row">
@@ -49,9 +44,10 @@
                             <div class="section-title title-wide mb-1 no-after-title-wide">
                                 <h2 class="font-weight-bold">ورود</h2>
                             </div>
-                            <form action="#">
+                            <form action="{% url 'account:login' %}" method="post">
+                                {% csrf_token %}
                                 <div class="form-row-title">
-                                    <h3>ایمیل یا شماره موبایل</h3>
+                                    <h3>{{form.email.label}}</h3>
                                 </div>
                                 <div class="form-row with-icon">
                                     <input type="text" class="input-ui pr-2"
@@ -59,7 +55,7 @@
                                     <i class="mdi mdi-account-circle-outline"></i>
                                 </div>
                                 <div class="form-row-title">
-                                    <h3>رمز عبور</h3>
+                                    <h3>{{form.password.label}}</h3>
                                 </div>
                                 <div class="form-row with-icon">
                                     <input type="password" class="input-ui pr-2"
@@ -84,7 +80,7 @@
                             <div class="form-footer mt-3">
                                 <div>
                                     <span class="font-weight-bold">کاربر جدید هستید؟</span>
-                                    <a href="#" class="mr-3 mt-2">ثبت نام در دیدیکالا</a>
+                                    <a href="{% url 'account:register'  %}" class="mr-3 mt-2">ثبت نام در دیدیکالا</a>
                                 </div>
                             </div>
                         </div>
