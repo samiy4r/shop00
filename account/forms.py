@@ -1,7 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-
 class ForgetPassForm(forms.Form):
     password = forms.CharField(
         label= "رمز عبور",
@@ -44,6 +43,11 @@ class RegisterForm(forms.Form):
         })
     )
     password = forms.CharField(
+        error_messages={
+               "min_length" : "رمز عبور کوتاه است"
+                },
+        max_length=55,
+        min_length=12,
         label= "رمز عبور",
         widget=forms.PasswordInput(attrs={
             'class': 'input-ui pr-2',
@@ -65,7 +69,6 @@ class RegisterForm(forms.Form):
             raise ValidationError('رمز عبور و تکرار آن باهم تطابق ندارد')
         else:
             return confirm_password
-
     
 
 class LoginForm(forms.Form):
@@ -77,6 +80,9 @@ class LoginForm(forms.Form):
         })
     )
     password = forms.CharField(
+        error_messages={
+               'required': 'رمز عبور را وارد کنید'
+                },
         label= "رمز عبور خود را وارد کنید",
         widget=forms.PasswordInput(attrs={
             'class': 'input-ui pr-2',
