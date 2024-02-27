@@ -5,6 +5,7 @@ from .forms import RegisterForm, LoginForm, EmailForm, ForgetPassForm
 from .models import User
 from django.utils.crypto import get_random_string
 from django.contrib.auth import login, logout
+
 # Create your views here.
 
 def register(request):
@@ -45,9 +46,13 @@ def login_page(request):
                     if is_password_correct:
                         login(request, user)
                         return HttpResponseRedirect(reverse('shop:index'))
+                    else:
+                        form.add_error("password" , "ایمیل یا رمز عبور نادرست است")
+                        return render(request, 'login.html', {'form': form})
+            else:
+                return redirect(reverse("account:register"))
         else:
             return render(request, 'login.html', {'form': form})
-
     return render(request, 'login.html', {'form': LoginForm})
 
 
@@ -57,7 +62,7 @@ def activateAccount(request, activate_code):
         user.email_active_code = get_random_string(80)
         user.is_active = True
         user.save()
-        return render(request, 'login.html', {'message':'اکانت شما فعال شد'})
+        return render(request, 'login.html', {'message':'اکانت شما فعال شد', "form" : LoginForm})
     else:
         return render(request, 'login.html', {'message':'اکانت شما پیدا نشد'})
 
