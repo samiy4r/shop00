@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    {{form.all.errors}}
     <div class="wrapper">
         <!-- Start main-content -->
         <main class="main-content dt-sl mt-4 mb-3">
@@ -61,6 +62,7 @@
                                     {{form.password}}
                                     <i class="mdi mdi-lock-open-variant-outline"></i>
                                 </div>
+                                {{form.password.errors}}
                                 <div class="form-row-title">
                                     <h3>{{form.confirm_password.label}}</h3>
                                 </div>
@@ -68,7 +70,7 @@
                                     <i class="mdi mdi-lock-open-variant-outline"></i>
                                     {{ form.confirm_password }}
                                 </div>
-                                {{form.confirm_password.errors}}
+                                {{form.confirm_password.errors}}   
                                 <div class="form-row mt-2">
                                     <div class="custom-control custom-checkbox float-right mt-2">
                                         <input type="checkbox" class="custom-control-input" id="customCheck3">
