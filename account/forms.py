@@ -73,7 +73,6 @@ class RegisterForm(forms.Form):
 
 class LoginForm(forms.Form):
     email = forms.EmailField(
-        min_length=11,
         label="ایمیل خود را وارد کنید",
         widget=forms.EmailInput(attrs={
             'class':'input-ui pr-2',
