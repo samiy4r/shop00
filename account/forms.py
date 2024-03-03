@@ -47,7 +47,7 @@ class RegisterForm(forms.Form):
                "min_length" : "رمز عبور کوتاه است"
                 },
         max_length=55,
-        min_length=12,
+        min_length=8,
         label= "رمز عبور",
         widget=forms.PasswordInput(attrs={
             'class': 'input-ui pr-2',

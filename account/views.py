@@ -5,7 +5,7 @@ from .forms import RegisterForm, LoginForm, EmailForm, ForgetPassForm
 from .models import User
 from django.utils.crypto import get_random_string
 from django.contrib.auth import login, logout
-
+from utils.email_service import email_sender
 # Create your views here.
 
 def register(request):
@@ -23,8 +23,12 @@ def register(request):
                 new_user = User(email=user_email, is_active=False, username=user_email)
                 new_user.set_password(user_pass)
                 new_user.email_active_code = get_random_string(80)
+                email_sender('فعالسازی اکانت',
+                            'email_templates/activate_account_email.html',
+                            user_email,
+                            {'user_email_active_code': new_user.email_active_code}
+                            )
                 new_user.save()
-                # TODO: 
                 return redirect(reverse('account:login'))
 
         else:
@@ -34,26 +38,29 @@ def register(request):
 
 
 def login_page(request):
-    if request.method == "POST":
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            user_email = request.POST.get('email')
-            user = User.objects.filter(email__iexact=user_email).first()
-            if user is not None:
-                if user.is_active:
-                    user_password = request.POST.get('password')
-                    is_password_correct = user.check_password(user_password)
-                    if is_password_correct:
-                        login(request, user)
-                        return HttpResponseRedirect(reverse('shop:index'))
-                    else:
-                        form.add_error("password" , "ایمیل یا رمز عبور نادرست است")
-                        return render(request, 'login.html', {'form': form})
+    if request.user.is_authenticated:
+        return redirect(reverse("shop:index"))
+    else:
+        if request.method == "POST":
+            form = LoginForm(request.POST)
+            if form.is_valid():
+                user_email = request.POST.get('email')
+                user = User.objects.filter(email__iexact=user_email).first()
+                if user is not None:
+                    if user.is_active:
+                        user_password = request.POST.get('password')
+                        is_password_correct = user.check_password(user_password)
+                        if is_password_correct:
+                            login(request, user)
+                            return redirect(reverse('shop:index'))
+                        else:
+                            form.add_error("password" , "ایمیل یا رمز عبور نادرست است")
+                            return render(request, 'login.html', {'form': form})
+                else:
+                    return redirect(reverse("account:register"))
             else:
-                return redirect(reverse("account:register"))
-        else:
-            return render(request, 'login.html', {'form': form})
-    return render(request, 'login.html', {'form': LoginForm})
+                return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {'form': LoginForm})
 
 
 def activateAccount(request, activate_code):
