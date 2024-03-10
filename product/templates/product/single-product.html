@@ -103,8 +103,7 @@
                         <div class="col-lg-8 col-md-6 py-2">
                             <div class="product-info dt-sl">
                                 <div class="product-title dt-sl">
-                                    <h1>گوشی موبایل سامسونگ مدل Galaxy A50 SM-A505F/DS دو سیم کارت ظرفیت 128گیگابایت
-                                    </h1>
+                                    <h1>{{product.title}}</h1>
                                     <h3>{{product.Short_description}}</h3>
                                 </div>
                                 <div class="product-variant dt-sl">
@@ -179,12 +178,12 @@
                                 <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
                                     <h2>قیمت : <span class="price">{{product.price}}</span> </h2>
                                 </div>
-                                <div class="dt-sl mt-4">
-                                    <a href="#" class="btn-primary-cm btn-with-icon">
+                                <div onclick="add_to_cart({{product.id}})" class="dt-sl mt-4">
+                                    <a class="btn-primary-cm btn-with-icon">
                                         <img src="/static/img/theme/shopping-cart.png" alt="">
                                         افزودن به سبد خرید
                                     </a>
-                                </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
