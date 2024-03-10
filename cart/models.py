@@ -11,7 +11,11 @@ class Cart(models.Model):
     #       return self.user.email
     
 class CartDetail(models.Model):
-        product = models.ForeignKey(Product, on_delete=models.CASCADE)
-        final_price = models.IntegerField(null=True, blank=True)
-        count = models.IntegerField()
-        cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    final_price = models.IntegerField(null=True, blank=True)
+    count = models.IntegerField()
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+
+
+    def get_total_price(self):
+        return self.product.price * self.count
