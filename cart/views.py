@@ -39,3 +39,24 @@ def delete_form_cart(request):
         if item.id == product_id:
             item.delete()
     return JsonResponse({'data':'success'})
+
+def add_count(request):
+    data = json.loads(request.body.decode('utf-8'))
+    product_id = data.get("productid")
+    cart_valou = CartDetail.objects.filter(id=product_id).first()
+    x = cart_valou.count
+    x = x +1
+    updatet_stat = CartDetail.objects.filter(id=product_id).update(count= x )
+    print(x)
+    return JsonResponse({"data" : '1' })
+
+
+def minus_count(request):
+    data = json.loads(request.body.decode('utf-8'))
+    product_id = data.get("productid")
+    cart_valou = CartDetail.objects.filter(id=product_id).first()
+    x = cart_valou.count
+    x = x  - 1
+    updatet_stat = CartDetail.objects.filter(id=product_id).update(count= x )
+    print(x)
+    return JsonResponse({"data" : '1' })
