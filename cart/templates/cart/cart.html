@@ -62,11 +62,14 @@
                                                             <p class="mb-0">تعداد</p>
                                                             <div class="number-input">
                                                                 <button
-                                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                                                    onclick="minus_count({{cart_detail.id}})"></button>
                                                                 <input class="quantity" min="0" name="quantity"
                                                                     value="{{ cart_detail.count }}" type="number">
                                                                 <button
-                                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                    onclick="add_count({{cart_detail.id}})"
+                                                                
+                                                                
+                                                                    
                                                                     class="plus"></button>
                                                             </div>
                                                         </td>
