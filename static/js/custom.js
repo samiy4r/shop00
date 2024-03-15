@@ -41,3 +41,31 @@ function delete_form_cart(product_id) {
   .then((response)=> response.json())
   .then((json) => {if (json.data == 'success') {location.reload()}});
 }
+
+function add_count(product_id){
+  fetch("http://127.0.0.1:8000/cart/addcount/" , {
+  method : "POST",
+  body: JSON.stringify({
+    productid : product_id,
+  }),
+  headers: {"X-CSRFToken": csrftoken }
+  })
+  .then((response)=> response.json())
+  
+  .then((json) => { if (json.data == "1" ) {location.reload()}} )
+  
+}
+
+function minus_count(product_id){
+  fetch("http://127.0.0.1:8000/cart/minuscount/" , {
+  method : "POST",
+  body: JSON.stringify({
+    productid : product_id,
+  }),
+  headers: {"X-CSRFToken": csrftoken }
+  })
+  .then((response)=> response.json())
+  
+  .then((json) => { if (json.data == "1" ) {location.reload()}} )
+  
+}
