@@ -6,6 +6,7 @@ from .models import User
 from django.utils.crypto import get_random_string
 from django.contrib.auth import login, logout
 from utils.email_service import email_sender
+from django.contrib import messages
 # Create your views here.
 
 def register(request):
@@ -29,6 +30,8 @@ def register(request):
                             {'user_email_active_code': new_user.email_active_code}
                             )
                 new_user.save()
+                messages.success(request,'اکانت شما با موفقیت ساخته شد')
+                messages.success(request,'ایمیل فعالسازی برای شما ارسال شد')
                 return redirect(reverse('account:login'))
 
         else:

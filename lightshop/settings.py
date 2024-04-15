@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -144,3 +144,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = environ.get('DJANGO_EMAIL')
 EMAIL_HOST_PASSWORD = environ.get('DJANGO_EMAIL_PASSWORD')
 EMAIL_PORT = 587
+
+
+ZP_MERCHANT_ID = environ.get('ZP_MERCHANT_ID')

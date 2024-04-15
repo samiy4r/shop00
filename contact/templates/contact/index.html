@@ -43,9 +43,10 @@
                   </div> 
               </div>
               <br>
-              <form class="mb-5" method="post" id="contactForm" name="contactForm" action="{% url 'lightshop:contact' %}">
+              <form class="mb-5" enctype="multipart/form-data" method="post" id="contactForm" name="contactForm" action="{% url 'lightshop:contact' %}">
                 {% csrf_token %}
                 {{form}}
+                <input type="file" name="myfile" id="">
                 <div class="row">
                   
                   <div class="col-md-12 form-group pt-2 ">

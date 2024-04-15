@@ -7,8 +7,15 @@ class Cart(models.Model):
     is_paid = models.BooleanField(default=False)
     payment_date = models.DateTimeField(null=True, blank=True)
 
-    # def __str__(self) -> str:
-    #       return self.user.email
+    def calculate_total_price(self):
+        total_price = 0
+        if self.is_paid:
+            for cart_detail in self.cartdetail_set.all():
+                total_price += cart_detail.final_price * cart_detail.count
+        else:
+            for cart_detail in self.cartdetail_set.all():
+                total_price += cart_detail.product.price * cart_detail.count
+        return int(total_price)
     
 class CartDetail(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
