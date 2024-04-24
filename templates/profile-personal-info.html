@@ -1,3 +1,8 @@
+{% load static %}
+
+
+
+
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -10,20 +15,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#f7858d">
     <title>didikala | Profile-Personal-Info Page</title>
     <!-- Font Icon -->
-    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{% static './css/vendor/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/materialdesignicons.min.css' %}">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static './css/vendor/bootstrap.min.css' %}">
     <!-- Plugins -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/jquery.horizontalmenu.css">
-    <link rel="stylesheet" href="./assets/css/vendor/fancybox.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="./assets/css/vendor/nouislider.min.css">
+    <link rel="stylesheet" href="{% static './css/vendor/bootstrap-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/jquery.horizontalmenu.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static './css/vendor/nouislider.min.css' %}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/colors/default.css" id="colorswitch">
+    <link rel="stylesheet" href="{% static './css/main.css' %}">
+    <link rel="stylesheet" href="{% static './css/colors/default.css' %}" id="colorswitch">
 </head>
 
 <body>
@@ -33,7 +38,7 @@
             <!-- Start ads -->
             <div class="ads-header-wrapper">
                 <a href="#" class="ads-header hidden-sm" target="_blank"
-                    style="background-image: url(./assets/img/banner/large-ads.jpg)"></a>
+                    style="background-image: url(./img/banner/large-ads.jpg)"></a>
             </div>
             <!-- End ads -->
             <!-- Start topbar -->
@@ -43,7 +48,7 @@
                         <div class="col-lg-2 col-md-3 col-6">
                             <div class="logo-area">
                                 <a href="#">
-                                    <img src="./assets/img/logo.png" alt="">
+                                    <img src="{% static './img/logo.png' %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -94,7 +99,7 @@
                                             <i class="mdi mdi-account-edit-outline"></i>ویرایش حساب کاربری
                                         </a>
                                         <div class="dropdown-divider" role="presentation"></div>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="{% url 'user_panel:profile_edit'%}">
                                             <i class="mdi mdi-logout-variant"></i>خروج
                                         </a>
                                     </div>
@@ -422,7 +427,7 @@
                                     </li>
                                     <li class="list-item">
                                         <a href="#">
-                                            <img src="./assets/img/theme/mega-menu.jpg" alt="">
+                                            <img src="{% static './img/theme/mega-menu.jpg' %}" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -581,7 +586,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/1.jpg" alt="">
+                                                    <img src="{% static './img/cart/1.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -609,7 +614,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/2.jpg" alt="">
+                                                    <img src="{% static './img/cart/2.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -637,7 +642,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/3.jpg" alt="">
+                                                    <img src="{% static './img/cart/3.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -691,7 +696,7 @@
                         <div class="side-menu">
                             <div class="logo-nav-res dt-sl text-center">
                                 <a href="#">
-                                    <img src="assets/img/logo.png" alt="">
+                                    <img src=/img/logo.png" alt="">
                                 </a>
                             </div>
                             <div class="search-box-side-menu dt-sl text-center mt-2 mb-3">
@@ -909,10 +914,10 @@
                                 <div class="profile-sidebar-header dt-sl">
                                     <div class="d-flex align-items-center">
                                         <div class="profile-avatar">
-                                            <img src="./assets/img/theme/avatar.png" alt="">
+                                            <img src="{% static './img/theme/avatar.png' %}" alt="">
                                         </div>
                                         <div class="profile-header-content mr-3 mt-2">
-                                            <span class="d-block profile-username">جلال بهرامی راد</span>
+                                            <span class="d-block profile-username"> {{info.username}}</span>
                                             <span class="d-block profile-phone">09030813742</span>
                                         </div>
                                     </div>
@@ -940,7 +945,7 @@
                             </div>
                             <div class="dt-sl dt-sn mb-3 text-center">
                                 <a href="#">
-                                    <img src="./assets/img/banner/sidebar-banner-3.jpg" class="img-fluid" alt="">
+                                    <img src="{% static './img/banner/sidebar-banner-3.jpg' %}" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="dt-sl dt-sn border mb-3">
@@ -1014,14 +1019,16 @@
                                         class="section-title text-sm-title title-wide mb-1 no-after-title-wide dt-sl mb-2">
                                         <h2>اطلاعات شخصی</h2>
                                     </div>
+                                {% for info in info %}  
                                     <div class="profile-section dt-sl">
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="label-info">
                                                     <span>نام و نام خانوادگی:</span>
                                                 </div>
+                                        
                                                 <div class="value-info">
-                                                    <span>جلال بهرامی راد</span>
+                                                    <span>{{info.username}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
@@ -1029,7 +1036,7 @@
                                                     <span>پست الکترونیک:</span>
                                                 </div>
                                                 <div class="value-info">
-                                                    <span>info@gmail.com</span>
+                                                    <span>{{info.email}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
@@ -1037,7 +1044,7 @@
                                                     <span>شماره تلفن همراه:</span>
                                                 </div>
                                                 <div class="value-info">
-                                                    <span>۰۹۰۳۰۸۱۳۷۴۲</span>
+                                                    <span>{{info.phone}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
@@ -1045,7 +1052,7 @@
                                                     <span>کد ملی:</span>
                                                 </div>
                                                 <div class="value-info">
-                                                    <span>-</span>
+                                                    <span>{{info.id_number}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
@@ -1061,12 +1068,13 @@
                                                     <span>شماره کارت:</span>
                                                 </div>
                                                 <div class="value-info">
-                                                    <span>-</span>
+                                                    <span>{{info.cart_number}}</span>
                                                 </div>
+                                            
                                             </div>
                                         </div>
                                         <div class="profile-section-link">
-                                            <a href="#" class="border-bottom-dt">
+                                            <a href="{% url 'user_panel:profile_edit'   %}" class="border-bottom-dt">
                                                 <i class="mdi mdi-account-edit-outline"></i>
                                                 ویرایش اطلاعات شخصی
                                             </a>
@@ -1076,6 +1084,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor  %}
                     <!-- End Content -->
                 </div>
                 <!-- Start Product-Slider -->
@@ -1106,7 +1115,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/07.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/07.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1129,7 +1138,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/017.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/017.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1152,7 +1161,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/013.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/013.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1175,7 +1184,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/09.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/09.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1198,7 +1207,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/010.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/010.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1224,7 +1233,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/011.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/011.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1247,7 +1256,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/019.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './img/products/019.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1279,31 +1288,31 @@
                     <div class="row">
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/delivery.svg">
+                                <img src=/img/svg/delivery.svg">
                             </a>
                             <p>تحویل اکسپرس</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/contact-us.svg">
+                                <img src=/img/svg/contact-us.svg">
                             </a>
                             <p>پشتیبانی 24 ساعته</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/payment-terms.svg">
+                                <img src=/img/svg/payment-terms.svg">
                             </a>
                             <p>پرداخت درمحل</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/return-policy.svg">
+                                <img src=/img/svg/return-policy.svg">
                             </a>
                             <p>۷ روز ضمانت بازگشت</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/origin-guarantee.svg">
+                                <img src=/img/svg/origin-guarantee.svg">
                             </a>
                             <p>ضمانت اصل بودن کالا</p>
                         </div>
@@ -1421,8 +1430,8 @@
                             </p>
                         </div>
                         <div class="symbol col-12 col-lg-5">
-                            <a href="#" target="_blank"><img src="assets/img/symbol-01.png" alt=""></a>
-                            <a href="#" target="_blank"><img src="assets/img/symbol-02.png" alt=""></a>
+                            <a href="#" target="_blank"><img src=/img/symbol-01.png" alt=""></a>
+                            <a href="#" target="_blank"><img src=/img/symbol-02.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -1443,43 +1452,43 @@
     <div id="colorswitch-option">
         <button><i class="mdi mdi-settings"></i></button>
         <ul>
-            <li class="active" data-path="./assets/css/colors/default.css"><span
+            <li class="active" data-path="./css/colors/default.css"><span
                     style="background-color: #f7858d;"></span></li>
-            <li data-path="./assets/css/colors/amber-color.css"><span style="background-color: #ffab00;"></span></li>
-            <li data-path="./assets/css/colors/blue-color.css"><span style="background-color: #2979ff;"></span></li>
-            <li data-path="./assets/css/colors/blue-grey-color.css"><span style="background-color: #607d8b;"></span>
+            <li data-path="./css/colors/amber-color.css"><span style="background-color: #ffab00;"></span></li>
+            <li data-path="./css/colors/blue-color.css"><span style="background-color: #2979ff;"></span></li>
+            <li data-path="./css/colors/blue-grey-color.css"><span style="background-color: #607d8b;"></span>
             </li>
-            <li data-path="./assets/css/colors/brown-color.css"><span style="background-color: #795548;"></span></li>
-            <li data-path="./assets/css/colors/cyan-color.css"><span style="background-color: #00bcd4;"></span></li>
-            <li data-path="./assets/css/colors/green-color.css"><span style="background-color: #4caf50;"></span></li>
-            <li data-path="./assets/css/colors/indigo-color.css"><span style="background-color: #3f51b5;"></span></li>
-            <li data-path="./assets/css/colors/lime-color.css"><span style="background-color: #cddc39;"></span></li>
-            <li data-path="./assets/css/colors/orange-color.css"><span style="background-color: #ff9800;"></span></li>
-            <li data-path="./assets/css/colors/red-color.css"><span style="background-color: #f44336;"></span></li>
-            <li data-path="./assets/css/colors/teal-color.css"><span style="background-color: #009688;"></span></li>
-            <li data-path="./assets/css/colors/purple-color.css"><span style="background-color: #9c27b0;"></span></li>
+            <li data-path="./css/colors/brown-color.css"><span style="background-color: #795548;"></span></li>
+            <li data-path="./css/colors/cyan-color.css"><span style="background-color: #00bcd4;"></span></li>
+            <li data-path="./css/colors/green-color.css"><span style="background-color: #4caf50;"></span></li>
+            <li data-path="./css/colors/indigo-color.css"><span style="background-color: #3f51b5;"></span></li>
+            <li data-path="./css/colors/lime-color.css"><span style="background-color: #cddc39;"></span></li>
+            <li data-path="./css/colors/orange-color.css"><span style="background-color: #ff9800;"></span></li>
+            <li data-path="./css/colors/red-color.css"><span style="background-color: #f44336;"></span></li>
+            <li data-path="./css/colors/teal-color.css"><span style="background-color: #009688;"></span></li>
+            <li data-path="./css/colors/purple-color.css"><span style="background-color: #9c27b0;"></span></li>
         </ul>
     </div>
     <!-- end colorPanel -->
     <!-- Core JS Files -->
-    <script src="./assets/js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/vendor/popper.min.js"></script>
-    <script src="./assets/js/vendor/bootstrap.min.js"></script>
+    <script src="{% static './js/vendor/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static './js/vendor/popper.min.js' %}"></script>
+    <script src="{% static './js/vendor/bootstrap.min.js' %}"></script>
     <!-- Plugins -->
-    <script src="./assets/js/vendor/bootstrap-slider.min.js"></script>
-    <script src="./assets/js/vendor/owl.carousel.min.js"></script>
-    <script src="./assets/js/vendor/owl.carousel2.thumbs.min.js"></script>
-    <script src="./assets/js/vendor/jquery.nicescroll.min.js"></script>
-    <script src="./assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/vendor/nouislider.min.js"></script>
-    <script src="./assets/js/vendor/jquery.horizontalmenu.js"></script>
-    <script src="./assets/js/vendor/jquery.fancybox.min.js"></script>
-    <script src="./assets/js/vendor/countdown.min.js"></script>
-    <script src="./assets/js/vendor/wNumb.js"></script>
-    <script src="./assets/js/vendor/ResizeSensor.min.js"></script>
-    <script src="./assets/js/vendor/theia-sticky-sidebar.min.js"></script>
+    <script src="{% static './js/vendor/bootstrap-slider.min.js' %}"></script>
+    <script src="{% static './js/vendor/owl.carousel.min.js' %}"></script>
+    <script src="{% static './js/vendor/owl.carousel2.thumbs.min.js' %}"></script>
+    <script src="{% static './js/vendor/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static './js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static './js/vendor/nouislider.min.js' %}"></script>
+    <script src="{% static './js/vendor/jquery.horizontalmenu.js' %}"></script>
+    <script src="{% static './js/vendor/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static './js/vendor/countdown.min.js' %}"></script>
+    <script src="{% static './js/vendor/wNumb.js' %}"></script>
+    <script src="{% static './js/vendor/ResizeSensor.min.js' %}"></script>
+    <script src="{% static './js/vendor/theia-sticky-sidebar.min.js' %}"></script>
     <!-- Main JS File -->
-    <script src="./assets/js/main.js"></script>
+    <script src="{% static './js/main.js' %}"></script>
 </body>
 
 </html>

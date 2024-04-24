@@ -1,3 +1,7 @@
+{% load static    %}
+
+
+
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -10,20 +14,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#f7858d">
     <title>didikala | Profile Page</title>
     <!-- Font Icon -->
-    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/materialdesignicons.min.css' %}">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/bootstrap.min.css' %}">
     <!-- Plugins -->
-    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/owl.carousel.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/jquery.horizontalmenu.css">
-    <link rel="stylesheet" href="./assets/css/vendor/fancybox.min.css">
-    <link rel="stylesheet" href="./assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="./assets/css/vendor/nouislider.min.css">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/bootstrap-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/jquery.horizontalmenu.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/vendor/nouislider.min.css' %}">
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/colors/default.css" id="colorswitch">
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/colors/default.css' %}" id="colorswitch">
 </head>
 
 <body>
@@ -43,7 +47,7 @@
                         <div class="col-lg-2 col-md-3 col-6">
                             <div class="logo-area">
                                 <a href="#">
-                                    <img src="./assets/img/logo.png" alt="">
+                                    <img src="{% static './assets/img/logo.png' %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -422,7 +426,7 @@
                                     </li>
                                     <li class="list-item">
                                         <a href="#">
-                                            <img src="./assets/img/theme/mega-menu.jpg" alt="">
+                                            <img src="{% static './assets/img/theme/mega-menu.jpg' %}" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -581,7 +585,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/1.jpg" alt="">
+                                                    <img src="{% static './assets/img/cart/1.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -609,7 +613,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/2.jpg" alt="">
+                                                    <img src="{% static './assets/img/cart/2.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -637,7 +641,7 @@
                                         <li class="cart-item">
                                             <a href="#" class="header-basket-list-item">
                                                 <div class="header-basket-list-item-image">
-                                                    <img src="./assets/img/cart/3.jpg" alt="">
+                                                    <img src="{% static './assets/img/cart/3.jpg' %}" alt="">
                                                 </div>
                                                 <div class="header-basket-list-item-content">
                                                     <p class="header-basket-list-item-title">
@@ -691,7 +695,7 @@
                         <div class="side-menu">
                             <div class="logo-nav-res dt-sl text-center">
                                 <a href="#">
-                                    <img src="assets/img/logo.png" alt="">
+                                    <img src="{% static 'assets/img/logo.png' %}" alt="">
                                 </a>
                             </div>
                             <div class="search-box-side-menu dt-sl text-center mt-2 mb-3">
@@ -909,7 +913,7 @@
                                 <div class="profile-sidebar-header dt-sl">
                                     <div class="d-flex align-items-center">
                                         <div class="profile-avatar">
-                                            <img src="./assets/img/theme/avatar.png" alt="">
+                                            <img src="{% static './assets/img/theme/avatar.png' %}" alt="">
                                         </div>
                                         <div class="profile-header-content mr-3 mt-2">
                                             <span class="d-block profile-username">جلال بهرامی راد</span>
@@ -940,7 +944,7 @@
                             </div>
                             <div class="dt-sl dt-sn mb-3 text-center">
                                 <a href="#">
-                                    <img src="./assets/img/banner/sidebar-banner-3.jpg" class="img-fluid" alt="">
+                                    <img src="{% static './assets/img/banner/sidebar-banner-3.jpg' %}" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <div class="dt-sl dt-sn border mb-3">
@@ -1084,7 +1088,7 @@
                                         <ul class="list-favorites">
                                             <li>
                                                 <a href="#">
-                                                    <img src="./assets/img/products/016.jpg" alt="">
+                                                    <img src="{% static './assets/img/products/016.jpg' %}" alt="">
                                                     <span>کت مردانه مجلسی مدل k-m-5500</span>
                                                 </a>
                                                 <button>
@@ -1093,7 +1097,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img src="./assets/img/products/020.jpg" alt="">
+                                                    <img src="{% static './assets/img/products/020.jpg' %}" alt="">
                                                     <span>کت مردانه مجلسی مدل k-m-5640</span>
                                                 </a>
                                                 <button>
@@ -1102,7 +1106,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img src="./assets/img/products/017.jpg" alt="">
+                                                    <img src="{% static './assets/img/products/017.jpg' %}" alt="">
                                                     <span>کت مردانه مجلسی مدل k-m-5110</span>
                                                 </a>
                                                 <button>
@@ -1221,7 +1225,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/07.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/07.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1244,7 +1248,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/017.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/017.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1267,7 +1271,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/013.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/013.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1290,7 +1294,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/09.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/09.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1313,7 +1317,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/010.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/010.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1339,7 +1343,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/011.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/011.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1362,7 +1366,7 @@
                                             </div>
                                         </div>
                                         <a class="product-thumb" href="shop-single.html">
-                                            <img src="./assets/img/products/019.jpg" alt="Product Thumbnail">
+                                            <img src="{% static './assets/img/products/019.jpg' %}" alt="Product Thumbnail">
                                         </a>
                                         <div class="product-card-body">
                                             <h5 class="product-title">
@@ -1394,31 +1398,31 @@
                     <div class="row">
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/delivery.svg">
+                                <img src="{% static 'assets/img/svg/delivery.svg' %}">
                             </a>
                             <p>تحویل اکسپرس</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/contact-us.svg">
+                                <img src="{% static 'assets/img/svg/contact-us.svg' %}">
                             </a>
                             <p>پشتیبانی 24 ساعته</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/payment-terms.svg">
+                                <img src="{% static 'assets/img/svg/payment-terms.svg' %}">
                             </a>
                             <p>پرداخت درمحل</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/return-policy.svg">
+                                <img src="{% static 'assets/img/svg/return-policy.svg' %}">
                             </a>
                             <p>۷ روز ضمانت بازگشت</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/svg/origin-guarantee.svg">
+                                <img src="{% static 'assets/img/svg/origin-guarantee.svg' %}">
                             </a>
                             <p>ضمانت اصل بودن کالا</p>
                         </div>
@@ -1536,8 +1540,8 @@
                             </p>
                         </div>
                         <div class="symbol col-12 col-lg-5">
-                            <a href="#" target="_blank"><img src="assets/img/symbol-01.png" alt=""></a>
-                            <a href="#" target="_blank"><img src="assets/img/symbol-02.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'assets/img/symbol-01.png' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'assets/img/symbol-02.png' %}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -1577,24 +1581,24 @@
     </div>
     <!-- end colorPanel -->
     <!-- Core JS Files -->
-    <script src="./assets/js/vendor/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/vendor/popper.min.js"></script>
-    <script src="./assets/js/vendor/bootstrap.min.js"></script>
+    <script src="{% static './assets/js/vendor/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/bootstrap.min.js' %}"></script>
     <!-- Plugins -->
-    <script src="./assets/js/vendor/bootstrap-slider.min.js"></script>
-    <script src="./assets/js/vendor/owl.carousel.min.js"></script>
-    <script src="./assets/js/vendor/owl.carousel2.thumbs.min.js"></script>
-    <script src="./assets/js/vendor/jquery.nicescroll.min.js"></script>
-    <script src="./assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/vendor/nouislider.min.js"></script>
-    <script src="./assets/js/vendor/jquery.horizontalmenu.js"></script>
-    <script src="./assets/js/vendor/jquery.fancybox.min.js"></script>
-    <script src="./assets/js/vendor/countdown.min.js"></script>
-    <script src="./assets/js/vendor/wNumb.js"></script>
-    <script src="./assets/js/vendor/ResizeSensor.min.js"></script>
-    <script src="./assets/js/vendor/theia-sticky-sidebar.min.js"></script>
+    <script src="{% static './assets/js/vendor/bootstrap-slider.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/owl.carousel.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/owl.carousel2.thumbs.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/nouislider.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/jquery.horizontalmenu.js' %}"></script>
+    <script src="{% static './assets/js/vendor/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/countdown.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/wNumb.js' %}"></script>
+    <script src="{% static './assets/js/vendor/ResizeSensor.min.js' %}"></script>
+    <script src="{% static './assets/js/vendor/theia-sticky-sidebar.min.js' %}"></script>
     <!-- Main JS File -->
-    <script src="./assets/js/main.js"></script>
+    <script src="{% static './assets/js/main.js' %}"></script>
 </body>
 
 </html>

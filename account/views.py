@@ -10,11 +10,13 @@ from django.contrib import messages
 # Create your views here.
 
 def register(request):
+    
     form = RegisterForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             user_email = request.POST.get('email')
-            user = User.objects.filter(email__iexact=user_email).exists()
+            username = request.POST.get('username')
+            user = User.objects.filter(email__iexact=user_email,username__iexact=username).exists()
             if user:
                 form.add_error('email', 'این ایمیل قبلا ثبت نام کرده است')
                 return render(request, 'register.html', {"form": form})
@@ -24,11 +26,11 @@ def register(request):
                 new_user = User(email=user_email, is_active=False, username=user_email)
                 new_user.set_password(user_pass)
                 new_user.email_active_code = get_random_string(80)
-                email_sender('فعالسازی اکانت',
-                            'email_templates/activate_account_email.html',
-                            user_email,
-                            {'user_email_active_code': new_user.email_active_code}
-                            )
+                # email_sender('فعالسازی اکانت',
+                            # 'email_templates/activate_account_email.html',
+                            # user_email,
+                            # {'user_email_active_code': new_user.email_active_code}
+                            # )
                 new_user.save()
                 messages.success(request,'اکانت شما با موفقیت ساخته شد')
                 messages.success(request,'ایمیل فعالسازی برای شما ارسال شد')
@@ -36,6 +38,7 @@ def register(request):
 
         else:
             return render(request, 'register.html', {"form": form})
+    print(request.user)
 
     return render(request, 'register.html', {"form": RegisterForm})
 
